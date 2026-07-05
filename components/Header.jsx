@@ -13,7 +13,7 @@ function Header() {
         {/* LEFT SIDE: Brand Logo / Name */}
         <div className="flex items-center gap-2">
           <span className="text-2xl">
-            <img src="/public/logo.png" alt="company logo" className="h-20 w-20 object-contain" />
+            <img src="/logo.png" alt="company logo" className="h-20 w-20 object-contain" />
           </span> 
           <span className="text-xl font-bold tracking-tight text-teal-700 font-sans">
             
@@ -55,9 +55,19 @@ function Header() {
       {/* MOBILE DROPDOWN MENU */}
       {isOpen && (
         <nav className="md:hidden mt-4 pt-4 border-t border-slate-100 flex flex-col gap-4 font-medium text-slate-600">
-          <a href="#services" onClick={() => setIsOpen(false)} className="hover:text-teal-600 transition-colors py-1">सेवाहरू</a>
+          {/* <a href="#services" onClick={() => setIsOpen(false)} className="hover:text-teal-600 transition-colors py-1">सेवाहरू</a>
           <a href="#pricing" onClick={() => setIsOpen(false)} className="hover:text-teal-600 transition-colors py-1">मूल्य विवरण</a>
-          <a href="#about" onClick={() => setIsOpen(false)} className="hover:text-teal-600 transition-colors py-1">हाम्रो बारेमा</a>
+          <a href="#about" onClick={() => setIsOpen(false)} className="hover:text-teal-600 transition-colors py-1">हाम्रो बारेमा</a> */}
+
+          <NavLink to="/service" onClick={() => setIsOpen(false)} className="hover:text-teal-600 transition-colors py-1" >
+          सेवाहरू
+          </NavLink>
+          <NavLink to="/pricing" onClick={() => setIsOpen(false)} className="hover:text-teal-600 transition-colors">
+          मूल्य विवरण
+          </NavLink>
+          <NavLink to="/about" onClick={() => setIsOpen(false)} className="hover:text-teal-600 transition-colors">
+          हाम्रो बारेमा
+          </NavLink>
         </nav>
       )}
     </header>
